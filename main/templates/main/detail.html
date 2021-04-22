@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="row">
+     <h1 class="title">{{ post_detail.title }}</h1>
+
+     <small>Posted at {{ post_detail.date_upload }}</small>
+
+     <p>{{ post_detail.body|safe }}</p>
+     <p>{{ post_detail.snippets_content|safe }}</p>
+</div>
+<br>
+     <hr> 
+    <br>
+     <h5  class="subtitle">Comments</h5>
+
+     {% for comment in post_detail.comments.all %}
+         <article class="media">
+             <div class="media-content">
+                 <div class="card-panel blue-grey lighten-4">
+                     <p>
+                         <strong style="font-size: large;">{{ comment.username }}</strong> <small>{{ comment.comment_date }}</small>
+                         <br>
+                         {{ comment.usercomment }}
+                     </p>
+                 </div>
+             </div>
+         </article>   
+     {% empty %}
+         <div class="notification">
+             <p>No comments was added</p>
+         </div>      
+     {% endfor %}
+     
+     <h5  class="subtitle">Add comment</h5>
+
+
+     <form method="post" action=".">
+         {% csrf_token %}
+         {{ form.as_p }}
+
+         <div class="field">
+            <button class="btn waves-effect waves-purple" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+         </div>
+     </form>
+     <br>
+     
+{% endblock %}

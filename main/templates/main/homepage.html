@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="row">
+ 
+    {% for post in my_post %}
+    <div class="col s12 m8 offset-m2 l8 offset-l2">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{ post.image.url }}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{ post.title }}<i class="material-icons right">more_vert</i></span>
+          <p><a href="{% url 'detail' post.slug %}">Read more</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{ post.title }}<i class="material-icons right">close</i></span>
+          <p>{{ post.intro }}</p>
+        </div>
+      </div>
+      <br>
+      <small>Posted at {{ post.date_upload }}</small>
+      </div>
+    {% endfor %}
+</div>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <div class="container">  
+        <div class="row">
+                <div class="col s12 m6 l4">
+                <!-- Promo Content 1 goes here -->
+                  <div class="center">
+                    <i class="large material-icons" style="color: #d50000">subscriptions</i>
+                    <p>Support Us On YouTube</p>
+                    <p class="light center"><li><a href="https://www.youtube.com/channel/UCIHaN_lWOntk0KxlgF2G-2w">This is our YouTube link.</a></li></p>
+                  </div> 
+                </div> 
+                <div class="col s12 m6 l4">
+                  <!-- Promo Content 2 goes here -->
+                  <div class="center">
+                      <i class="large material-icons" style="color: #263238 ">build</i>
+                      <p>Secure your Future</p>
+                      <p class="light center">We build your future.</p>
+                  </div>
+                </div> 
+                <div class="col s12 m6 l4">
+                  <!-- Promo Content 3 goes here -->
+                  <div class="center">
+                      <i class="large material-icons" style="color: #00b0ff">edit_location</i>
+                      <p>We are everywhere</p>
+                      <p class="light center">You guys are our ❤️</p>
+                  </div>
+                </div>
+          </div>
+        </div>
+{% endblock %}         

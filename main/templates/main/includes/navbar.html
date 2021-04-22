@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="navbar-fixed">
+  <nav style="background-color: #263238;">
+    <div class="nav-wrapper container">
+      <a class="brand-logo" href="/"><img class="responsive-img" style="width: 50px;height: 50px;margin-top: 5px" src="{% static 'main/img/1s2c.png' %}"/><b style="color: white">1Science2Code</b></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      
+        <ul class="right hide-on-med-and-down">
+            <li>
+              <i class="material-icons">search</i>
+            </li>
+            <li>
+              <form  style="height: 50px; padding-top:1px " method="get" action="">
+                <input value="" type="text"style="font-size:medium;color:white" name="q" placeholder="search"/>
+              </form>
+            </li>
+
+            <li><a style="font-size:x-large;" href="/">Home</a></li>
+        </ul>
+      
+    </div>
+  </nav>
+</div>  
+
+
+<ul class="sidenav" id="mobile-demo" style="left:0px">
+  <li>
+    <form  style="height:50px;padding-top:10px " method="get" action=""}>
+      <input  type="text"style="font-size:16px" name="q" placeholder="search"/>
+    </form>
+  </li>
+  <li><a href="/">Home</a></li>
+</ul>
+
+
+
+  <ul id="slide-out" class="sidenav">
+  <li><div class="user-view">
+    <div class="background">
+      <img src="{% static 'main/img/backg.jpg' %}">
+    </div>
+    <a href="#"><img class="circle" src="{% static 'main/img/juune.jpg' %}"></a>
+    <a href="#"><span class="white-text name">June Pudasaini</span></a>
+    <a href="#"><span class="white-text email">junepudasaini@gmail.com</span></a>
+  </div></li>
+    <li><a href="/"><i class="material-icons" style="color: #1e88e5;" >home</i>Home</a></li>
+    <li><a href="#!"><i class="material-icons" style="color: #00b0ff;" >code</i>Blog</a></li>
+    <li><a href="#!"><i class="material-icons" style="color: #ffc400;" >person</i>About</a></li>
+    
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Connect with me</a></li>
+    <li><a href="#!"><i class="material-icons" style="color: #0091ea;" >send</i>Contact</a></li>
+
+</ul>
+
+<a id="sidebar-nav" data-position="right" href="#" data-tooltip="Open side navbar" data-target="slide-out" class="sidenav-trigger">
+  <i class="material-icons" style="margin-top: 9px;" >menu</i></a>
